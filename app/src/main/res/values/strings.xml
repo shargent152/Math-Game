@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Math Game</string>
+    <string name="select_difficulty">Select Difficulty:</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="select_application">Select Operation:</string>
+    <string name="addition">Addition</string>
+    <string name="subtraction">Subtraction</string>
+    <string name="multiplication">Multiplication</string>
+    <string name="division">Division</string>
+    <string name="number_of_questions">Number Of Questions</string>
+    <string name="minusValue">-</string>
+    <string name="plusSymbol">+</string>
+    <string name="start">start</string>
+    <string name="what_is">What Is</string>
+    <string name="your_answer_is">Your Answer Is</string>
+    <string name="done">DONE</string>
+    <string name="try_again">Try Again</string>
+</resources>

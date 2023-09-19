@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+    <!-- this is the most UI intesive xml file
+    it starts with the image at the top
+    then goes to the radio groups that decide how hard and what operation to do
+    then you use the Plus or minus buttons to edit the howmanyquestions textView
+    then finally at the end theres a start button to send you to the next screen -->
+    <!-- i set the height to this so it would actually go on the top of the screen -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
+        android:src="@drawable/hated_math_1200x627"
+        android:id="@+id/mathimage"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        />
+
+    <!-- this is the diffculty group -->
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Difficulty"
+        android:padding="10dp"
+        android:layout_below="@id/mathimage"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_difficulty"
+            android:textSize="16dp" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/easy"
+            android:onClick="easy"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/medium"
+            android:onClick="mid"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hard"
+            android:onClick="hard"/>
+    </RadioGroup>
+    <!-- this operations group -->
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/Difficulty"
+        android:padding="10dp"
+        android:layout_marginLeft="100dp"
+        android:layout_below="@id/mathimage"
+        android:id="@+id/applications"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_application"
+            android:textSize="16dp"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/addition"
+            android:onClick="add"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/multiplication"
+            android:onClick="multi"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/division"
+            android:onClick="divide"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subtraction"
+            android:onClick="sub"
+            />
+    </RadioGroup>
+    <!-- this is just the text that says how many questions -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/applications"
+        android:text="@string/number_of_questions"
+        android:textSize="30sp"
+        android:padding="10dp"
+        android:id="@+id/questions"/>
+    <!-- minus -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:layout_below="@id/questions"
+        android:text="@string/minusValue"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        android:id="@+id/minus"
+        android:onClick="minus"/>
+    <!-- this is the text view edited by the plus and minus buttons
+    the number goes up every time the plus button is pushed
+    and it goes down when minus is pushed -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/minus"
+        android:layout_below="@id/questions"
+        android:layout_alignEnd="@id/questions"
+        android:layout_alignBottom="@id/minus"
+        android:backgroundTint="@color/white"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:id="@+id/howmanyquestions"
+        android:gravity="center"
+        />
+    <!-- plus -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:layout_below="@id/questions"
+        android:text="@string/plusSymbol"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        android:id="@+id/add"
+        android:layout_toRightOf="@id/howmanyquestions"
+        android:onClick="plus"/>
+    <!-- the start button
+    i let it take up the rest of the screen just becuase i thought it looked better that way
+    -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/add"
+        android:text="@string/start"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        android:id="@+id/start"
+        android:layout_toRightOf="@id/howmanyquestions"
+        android:background="@drawable/button_shape"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:onClick="start"/>
+
+</RelativeLayout>

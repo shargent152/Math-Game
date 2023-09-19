@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- this screen is also very bare just like end state one
+    except this one has a little bit less blank space as it has the image at the bottom that takes up the rest of the space
+    the question text view only gets text when the two random numbers and operator are decided
+    the submit button reset the edit text to say its hint
+    image height is the same as main activity for the same reasoning -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:text="@string/what_is"
+        android:textSize="50sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="60dp"
+        android:id="@+id/whatis"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:textSize="50sp"
+        android:layout_margin="20sp"
+        android:layout_below="@id/whatis"
+        android:id="@+id/question"
+        android:gravity="center"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/your_answer_is"
+        android:layout_below="@id/question"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:textSize="40sp"
+        android:layout_margin="20dp"
+        android:id="@+id/answer"
+        android:inputType="text"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/done"
+        android:layout_margin="20dp"
+        android:layout_below="@id/answer"
+        android:layout_centerInParent="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:onClick="submit"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
+        android:src="@drawable/hated_math_1200x627"
+        android:id="@+id/mathimage"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>
