@@ -1,6 +1,7 @@
 package com.example.mathgame
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -138,12 +139,24 @@ class MathScreen : AppCompatActivity() {
                     mathPassed = true
                     // clears the text box
                     userAnswer.getText().clear()
+                    // makes the correct toast
+                    val toast = Toast.makeText(this,"Correct. Good work!",Toast.LENGTH_SHORT)
+                    toast.show()
+                    // makes the win sound
+                    var mediaPlayer = MediaPlayer.create(this,R.raw.win_sound)
+                    mediaPlayer.start()
                     Log.i("TEST", "math: correct")
                 }
                 else{
                     counter++
                     mathPassed = true
                     userAnswer.getText().clear()
+                    // if the answers wrong a wrong toast will appear
+                    val toast = Toast.makeText(this,"Wrong",Toast.LENGTH_SHORT)
+                    toast.show()
+                    // plays a wrong sound if answer is wrong
+                    var mediaPlayer = MediaPlayer.create(this,R.raw.wrong_sound)
+                    mediaPlayer.start()
                     Log.i("TEST","math: incorrect")
                 }
             }
@@ -164,12 +177,20 @@ class MathScreen : AppCompatActivity() {
                     counter++
                     mathPassed = true
                     userAnswer.getText().clear()
+                    val toast = Toast.makeText(this,"Correct. Good work!",Toast.LENGTH_SHORT)
+                    toast.show()
+                    var mediaPlayer = MediaPlayer.create(this,R.raw.win_sound)
+                    mediaPlayer.start()
                     Log.i("TEST", "math: correct")
                 }
                 else{
                     counter++
                     mathPassed = true
                     userAnswer.getText().clear()
+                    val toast = Toast.makeText(this,"Wrong",Toast.LENGTH_SHORT)
+                    toast.show()
+                    var mediaPlayer = MediaPlayer.create(this,R.raw.wrong_sound)
+                    mediaPlayer.start()
                     Log.i("TEST","math: incorrect")
                 }
             }
@@ -184,12 +205,20 @@ class MathScreen : AppCompatActivity() {
                     counter++
                     mathPassed = true
                     userAnswer.getText().clear()
+                    val toast = Toast.makeText(this,"Correct. Good work!",Toast.LENGTH_SHORT)
+                    toast.show()
+                    var mediaPlayer = MediaPlayer.create(this,R.raw.win_sound)
+                    mediaPlayer.start()
                     Log.i("TEST", "math: correct")
                 }
                 else{
                     counter++
                     mathPassed = true
                     userAnswer.getText().clear()
+                    val toast = Toast.makeText(this,"Wrong",Toast.LENGTH_SHORT)
+                    toast.show()
+                    var mediaPlayer = MediaPlayer.create(this,R.raw.wrong_sound)
+                    mediaPlayer.start()
                     Log.i("TEST","math: incorrect")
                 }
             }
@@ -204,12 +233,20 @@ class MathScreen : AppCompatActivity() {
                     counter++
                     mathPassed = true
                     userAnswer.getText().clear()
+                    val toast = Toast.makeText(this,"Correct. Good work!",Toast.LENGTH_SHORT)
+                    toast.show()
+                    var mediaPlayer = MediaPlayer.create(this,R.raw.win_sound)
+                    mediaPlayer.start()
                     Log.i("TEST", "math: correct")
                 }
                 else{
                     counter++
                     mathPassed = true
                     userAnswer.getText().clear()
+                    val toast = Toast.makeText(this,"Wrong",Toast.LENGTH_SHORT)
+                    toast.show()
+                    var mediaPlayer = MediaPlayer.create(this,R.raw.wrong_sound)
+                    mediaPlayer.start()
                     Log.i("TEST","math: incorrect")
                 }
             }
@@ -225,9 +262,13 @@ class MathScreen : AppCompatActivity() {
             // checks if it has decimal and if it does it trys double
             // if not it trys int
             // if both fail it returns false
+            // it also checks to see if the string is null
+            // if so it returns false
             if (answer.contains(".")){
                 answer.toDouble()
                 return true
+            }else if(answer == null){
+                return false
             }else{
                 answer.toInt()
                 return true
