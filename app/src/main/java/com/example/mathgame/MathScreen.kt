@@ -28,6 +28,7 @@ class MathScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.mathscreen)
+        runs++
         if (operatorNum == 1){
             if (difficultyNum == 1){
                 num1 = Random.nextInt(0,10)
