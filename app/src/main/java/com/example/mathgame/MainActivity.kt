@@ -30,45 +30,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if(runs != 0){
-            var questionNumber = questionCount.toInt()
-            if ((questionNumber / correct) * 100 > 80){
-                if (operatorNum == 1){
-                    var endStateView = findViewById<TextView>(R.id.endState)
-                    endStateView.setTextColor(Color.GRAY)
-                    endStateView.setText("You got " + correct.toString() + " out of" + questionCount +" correct in subtraction. Good Work")
-                }else if (operatorNum == 2){
-                    var endStateView = findViewById<TextView>(R.id.endState)
-                    endStateView.setTextColor(Color.GRAY)
-                    endStateView.setText("You got " + correct.toString() + " out of" + questionCount +" correct in division. Good Work")
-                }else if(operatorNum == 3){
-                    var endStateView = findViewById<TextView>(R.id.endState)
-                    endStateView.setTextColor(Color.GRAY)
-                    endStateView.setText("You got " + correct.toString() + " out of" + questionCount +" correct in multiplication. Good Work")
-                }else{
-                    var endStateView = findViewById<TextView>(R.id.endState)
-                    endStateView.setTextColor(Color.GRAY)
-                    endStateView.setText("You got " + correct.toString() + " out of" + questionCount +" correct in addition. Good Work")
-                }
-            }else{
-                if (operatorNum == 1){
-                    var endStateView = findViewById<TextView>(R.id.endState)
-                    endStateView.setTextColor(Color.RED)
-                    endStateView.setText("You got " + correct.toString() + " out of" + questionCount +" correct in subtraction. You need to practice more!")
-                }else if (operatorNum == 2){
-                    var endStateView = findViewById<TextView>(R.id.endState)
-                    endStateView.setTextColor(Color.RED)
-                    endStateView.setText("You got " + correct.toString() + " out of" + questionCount +" correct in division. You need to practice more!")
-                }else if(operatorNum == 3){
-                    var endStateView = findViewById<TextView>(R.id.endState)
-                    endStateView.setTextColor(Color.RED)
-                    endStateView.setText("You got " + correct.toString() + " out of" + questionCount +" correct in multiplication. You need to practice more!")
-                }else{
-                    var endStateView = findViewById<TextView>(R.id.endState)
-                    endStateView.setTextColor(Color.RED)
-                    endStateView.setText("You got " + correct.toString() + " out of" + questionCount +" correct in addition. You need to practice more!")
-            }
-        }
         correct = 0
         var questionCountView = findViewById<TextView>(R.id.howmanyquestions)
         questionCountView.setText(questionCount)
@@ -147,5 +108,4 @@ class MainActivity : AppCompatActivity() {
 
 
 
-}
 }

@@ -229,6 +229,8 @@ class MathScreen : AppCompatActivity() {
             if (answer.contains(".")){
                 answer.toDouble()
                 return true
+            }else if(answer.equals("")){
+                return false
             }else{
                 answer.toInt()
                 return true
