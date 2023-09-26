@@ -20,6 +20,7 @@ var questionCount = "0"
 var operatorNum = 0
 // This figures out the difficulty
 var difficultyNum = 0
+// Checks to make sure that it was the first run through
 var runner = false
 class MainActivity : AppCompatActivity() {
     /**
@@ -33,12 +34,19 @@ class MainActivity : AppCompatActivity() {
         if (runner){
             textView()
         }
+        // after first run through becomes true
         runner = true
         questionCount = "0"
             var questionCountView = findViewById<TextView>(R.id.howmanyquestions)
             questionCountView.setText(questionCount)
 
         }
+
+    /**
+     * Sets the top textView based on the certain variables
+     * It does not take in or send anything
+     * It gets called if and only if its not the first run through of the app
+     */
     fun textView() {
         var questionNumber = questionCount.toInt()
         var logCheck = (correct / questionNumber.toDouble())
