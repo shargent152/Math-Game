@@ -29,7 +29,7 @@ class MathScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.mathscreen)
-        runs++
+        runner = true
         if (operatorNum == 1){
             if (difficultyNum == 1){
                 num1 = Random.nextInt(0,10)
@@ -265,10 +265,11 @@ class MathScreen : AppCompatActivity() {
             // if both fail it returns false
             // it also checks to see if the string is null
             // if so it returns false
+            Log.i("Problem",answer)
             if (answer.contains(".")){
                 answer.toDouble()
                 return true
-            }else if(answer == null){
+            }else if(answer == "") {
                 return false
             }else{
                 answer.toInt()
@@ -290,7 +291,7 @@ class MathScreen : AppCompatActivity() {
         // don't need to check if math passed because counter only goes up when math runs
         if (counter == questionCount.toInt()){
             counter = 0
-            var i = Intent(this@MathScreen, endState::class.java)
+            var i = Intent(this@MathScreen, MainActivity::class.java)
             startActivity(i)
         }
         // if math passed and counter doesn't equal the question amount then it resets everything and picks new numbers

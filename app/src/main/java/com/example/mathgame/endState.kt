@@ -17,7 +17,6 @@ class endState : AppCompatActivity() {
         var endText = findViewById<TextView>(R.id.endingtext)
         endText.setText("You Got " + correct.toString() + " Out of " + questionCount + " Correct")
         //resets question count
-        questionCount = "0"
     }
 
     /**
