@@ -12,16 +12,21 @@ The following **required** functionality is completed
 * on this screen the user sees a editText box a submit button and text
 * the user sees a question and then will answer it in the text box
 * if the user doesnt not provide a number answer a toast will appear asking the user enters a valid input
-* after the user answers all the questions they will be sent to the final screen that says how many the got right
-* then a button will say try again and if pushed will send them back to the orginal screen
+* if the user gets the answer correct a correct sound and toast will appear
+* if the user gets the answer wrong a wrong sound and toast will appear
+* after the user answers all the questions they get returned to the orginal screen
+* now the screen will have text saying how many questions they had and how many they got right
+* if they get under 80% correct the text is red and says you should practice more
+* if they get over 80% correct the text is gray and says good job
 The following **extensions** are added
 * when doing division the game rounds every answer to a hundreth and tells the user to do so through a toast
 ## Video Walkthrough
-![mathGame](https://github.com/shargent152/Math-Game/assets/125781283/743ccd7b-1cc4-451a-9db3-b9dc166f34a6)
+![mathGame2](https://github.com/shargent152/Math-Game/assets/125781283/503fd2b7-f002-477f-be4c-5fab20cdcbdf)
 ## Notes
 * I did struggle thinking through some of the math logic then i realized it only had to run when the submit button was pushed
 * doing the rounding for division was diffcult but once i figured it out it was a breeze
 * the UI on the first screen was hard for me to do
+* I struggle adding the textView into the app
 ## License
 
     Copyright 2023 Trevor Peevers
